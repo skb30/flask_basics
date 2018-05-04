@@ -1,0 +1,22 @@
+{% import 'macros.html' as my_macros %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title> Movies for {{ name }} </title>
+</head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<h2> dictionary data displayed </h2>
+<h3>{{ url_for('static', filename='css/styles.css') }} </h3>
+
+
+<h2> working with macros</h2>
+
+<body>
+
+{{ my_macros.render_dict(movies) }}
+
+</body>
+</html>

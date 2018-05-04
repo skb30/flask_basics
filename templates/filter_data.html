@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Data Filters</title>
+
+</head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <h2> working with jinja2 filters </h2>
+  {% for movie, duration in movies|dictsort (false, 'value') %}
+    <ul>
+      <li> {{ movie|title}} : {{ duration|round(1) }} </li>
+    </ul>
+
+  {% endfor %}
+
+  <hr>
+
+  <ol type="1">
+    <li> default value       : {{ name|default('value not defined', true ) }}</li> <br>
+    <li> capital case       : {{ film|capitalize }}</li> <br>
+    <li> length             : {{movies|length }} </li> <br>
+    <li> first item         : {{ movies|first }}</li> <br>
+    <li> make a list       : {{ film|list }}</li> <br>
+    <li> replace data       : {{ film|replace('carol', 'cookie') | upper }}</li> <br>
+
+
+</body>
+</html>
